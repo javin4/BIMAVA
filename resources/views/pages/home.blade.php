@@ -1,4 +1,8 @@
 @extends('layouts.default')
+@section('pagetitle', 'home')
 @section('content')
-    Home Page
+
+<h4>1) basic installation</h4>
+
+
 @stop

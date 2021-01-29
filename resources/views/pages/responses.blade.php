@@ -4,9 +4,8 @@
 
 
 @section('content')
-<div class="ml-12">
-    <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-        <pre>
+
+<pre>
 200: OK. The standard success code and default option.
 201: Object created. Useful for the store actions.
 204: No content. When an action was executed successfully, but there is no content to return.
@@ -17,10 +16,9 @@
 404: Not found. This will be returned automatically by Laravel when the resource is not found.
 500: Internal server error. Ideally you're not going to be explicitly returning this, but if something unexpected breaks, this is what your user is going to receive.
 503: Service unavailable. Pretty self explanatory, but also another code that is not going to be returned explicitly by the application.
-        </pre>
+</pre>
 
 <a href="https://www.toptal.com/laravel/restful-laravel-api-tutorial" target="_blank">https://www.toptal.com/laravel/restful-laravel-api-tutorial</a>
 
-    </div>
-</div>   
+  
 @stop
