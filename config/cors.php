@@ -15,7 +15,14 @@ return [
     |
     */
 
-    'paths' => ['api/*', 'sanctum/csrf-cookie'],
+
+    /* Note: moddified according lighthouse installation guide:
+        https://lighthouse-php.com/5.1/getting-started/configuration.html
+        -   'paths' => ['api/*', 'sanctum/csrf-cookie'],
+        +   'paths' => ['api/*', 'graphql', 'sanctum/csrf-cookie'],
+    */
+    'paths' => ['api/*', 'graphql', 'sanctum/csrf-cookie'],
+
 
     'allowed_methods' => ['*'],
 
