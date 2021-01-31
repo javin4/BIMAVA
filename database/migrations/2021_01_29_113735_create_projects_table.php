@@ -17,6 +17,7 @@ class CreateProjectsTable extends Migration
             $table->uuid('id')->primary();
             $table->timestamps();
             $table->string('name',60); // bezeichnung
+            $table->string('kennung',10)->unique(); // bezeichnung
         });
     }
 
