@@ -14,7 +14,7 @@ class ProjectSeeder extends Seeder
      */
     public function run()
     {
-         //seed 5 Projects
+        //seed 5 Projects
          DB::table('projects')->insert(
             [
                 'id' =>  '9a4208ba-27da-405c-b484-f386ba48f00b',

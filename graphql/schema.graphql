@@ -9,6 +9,7 @@ type Query {
     user(id: ID @eq): User @find
 
     projects: [Project] @all
+    currentProject(id: String @eq ):Project @find
 }
 
 type User {
@@ -19,8 +20,15 @@ type User {
     updated_at: DateTime!
 }
 
+type LV {
+    id: String!
+    name: String!
+    kennung: String! 
+}
+
 type Project {
     id: String!
     name: String!
     kennung: String!
+    lvs: [LV] @hasMany
 }

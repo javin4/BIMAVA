@@ -2,12 +2,15 @@
 
 namespace App\Traits;
 
+use App\Models\Project;
+
 trait belongsToProjectTrait
 {
     protected $parentColumn = 'project_id';
 
     public function belongsToProject(){
-        return $this->belongsTo(static::class);
+       // return $this->belongsTo(static::class);
+        return $this->belongsTo(Project::class,'project_id');
     }
     /*
     public function children(){
