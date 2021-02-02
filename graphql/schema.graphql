@@ -4,12 +4,24 @@ scalar Date @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Date")
 "A datetime string with format `Y-m-d H:i:s`, e.g. `2018-05-23 13:43:32`."
 scalar DateTime @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
 
+
 type Query {
     users: [User!]! @paginate(defaultCount: 10)
     user(id: ID @eq): User @find
-
-    projects: [Project] @all
+ 
+   
+    projects(orderBy: [OrderByClause!] @orderBy): [Project!]! @all
     currentProject(id: String @eq ):Project @find
+}
+
+input OrderByClause {
+  column: String!    
+  order: SortOrder!
+}
+
+enum SortOrder {
+  ASC
+  DESC
 }
 
 type User {
@@ -30,5 +42,6 @@ type Project {
     id: String!
     name: String!
     kennung: String!
-    lvs: [LV] @hasMany
+    "lvs: [LV] @hasMany"
+    lvs(orderBy: [OrderByClause!] @orderBy): [LV] @hasMany
 }
