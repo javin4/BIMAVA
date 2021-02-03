@@ -1,0 +1,5 @@
+type LV {
+    id: String!
+    name: String!
+    kennung: String! 
+}

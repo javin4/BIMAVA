@@ -1,0 +1,19 @@
+type Query {
+    projects(orderBy: [OrderByClause!] @orderBy): [Project!]! @all
+    currentProject(id: String @eq ):Project @find
+
+}
+
+type Mutation {
+    createProject(
+        name: String @rules(apply : ["required"])
+        kennung: String @rules(apply : ["required"])
+    ):Project @create
+}
+
+type Project {
+    id: String!
+    name: String!
+    kennung: String!
+    lvs(orderBy: [OrderByClause!] @orderBy): [LV] @hasMany
+}
