@@ -1,14 +1,23 @@
 type Query {
     projects(orderBy: [OrderByClause!] @orderBy): [Project!]! @all
     currentProject(id: String @eq ):Project @find
-
 }
 
 type Mutation {
     createProject(
         name: String @rules(apply : ["required"])
-        kennung: String @rules(apply : ["required"])
+        kennung: String @rules(apply : ["required","unique:projects,kennung"])
     ):Project @create
+
+    updateProject(
+        id: String @rules(apply : ["required"])
+        name: String 
+        kennung: String 
+    ):Project @update
+
+    deleteProject(
+        id: String! @rules(apply : ["required"])
+    ):Project @delete
 }
 
 type Project {

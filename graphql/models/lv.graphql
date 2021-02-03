@@ -1,3 +1,7 @@
+extend type Query {
+    lv(id: String @eq ):LV @find
+}
+
 type LV {
     id: String!
     name: String!
